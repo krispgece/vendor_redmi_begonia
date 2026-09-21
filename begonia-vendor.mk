@@ -931,3 +931,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor_lib_hw_vulkan_mt6785_so \
     vendor_lib64_hw_vulkan_mt6785_so
+
+# MediaTek OMX codec layer
+PRODUCT_COPY_FILES += \
+    vendor/redmi/begonia/proprietary/vendor/etc/mtk_omx_core.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_omx_core.cfg
+
+PRODUCT_PACKAGES += \
+    libMtkOmxAdpcmDec \
+    libMtkOmxAlacDec \
+    libMtkOmxApeDec \
+    libMtkOmxCore \
+    libMtkOmxGsmDec \
+    libMtkOmxMp3Dec \
+    libMtkOmxVdecEx \
+    libMtkOmxVenc \
+    libstagefrighthw
