@@ -104,6 +104,7 @@ PRODUCT_COPY_FILES += \
     vendor/redmi/begonia/proprietary/vendor/etc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
     vendor/redmi/begonia/proprietary/vendor/etc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp_RF.conf \
     vendor/redmi/begonia/proprietary/vendor/etc/mpe.conf:$(TARGET_COPY_OUT_VENDOR)/etc/mpe.conf \
+    vendor/redmi/begonia/proprietary/vendor/etc/mtk_omx_core.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_omx_core.cfg \
     vendor/redmi/begonia/proprietary/vendor/etc/slp_conf:$(TARGET_COPY_OUT_VENDOR)/etc/slp_conf \
     vendor/redmi/begonia/proprietary/vendor/etc/special_pws_channel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/special_pws_channel.xml \
     vendor/redmi/begonia/proprietary/vendor/etc/spn-conf-op09.xml:$(TARGET_COPY_OUT_VENDOR)/etc/spn-conf-op09.xml \
@@ -276,6 +277,7 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_ac4dec \
     libstagefright_soft_ddpdec \
     libstagefrightdolby \
+    libstagefrighthw \
     libstrongswan \
     libsysenv \
     libthha \
@@ -312,6 +314,14 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkcodecservice@1.1-impl \
     libDR \
     libHEVCdec_sa.ca7.android \
+    libMtkOmxAdpcmDec \
+    libMtkOmxAlacDec \
+    libMtkOmxApeDec \
+    libMtkOmxCore \
+    libMtkOmxGsmDec \
+    libMtkOmxMp3Dec \
+    libMtkOmxVdecEx \
+    libMtkOmxVenc \
     libMtkSpeechEnh \
     lib_iir \
     lib_smartpa_nxp_ap \
@@ -931,18 +941,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor_lib_hw_vulkan_mt6785_so \
     vendor_lib64_hw_vulkan_mt6785_so
-
-# MediaTek OMX codec layer
-PRODUCT_COPY_FILES += \
-    vendor/redmi/begonia/proprietary/vendor/etc/mtk_omx_core.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_omx_core.cfg
-
-PRODUCT_PACKAGES += \
-    libMtkOmxAdpcmDec \
-    libMtkOmxAlacDec \
-    libMtkOmxApeDec \
-    libMtkOmxCore \
-    libMtkOmxGsmDec \
-    libMtkOmxMp3Dec \
-    libMtkOmxVdecEx \
-    libMtkOmxVenc \
-    libstagefrighthw
