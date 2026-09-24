@@ -1935,6 +1935,49 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libcharon-ss",
+    owner: "redmi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libcharon-ss.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libsimaka",
+                "libstrongswan",
+                "libhydra",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libcharon-ss.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libsimaka",
+                "libstrongswan",
+                "libhydra",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libcrypto-md",
     owner: "redmi",
     strip: {
@@ -6409,34 +6452,6 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libc++",
                 "libc",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libcharon-ss",
-    owner: "redmi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libcharon-ss.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libsimaka",
-                "libstrongswan",
-                "libhydra",
-                "liblog",
-                "libc",
-                "libm",
                 "libdl",
             ],
         },
@@ -21100,6 +21115,32 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "charon",
+    owner: "redmi",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/charon",
+            ],
+            shared_libs: [
+                "libstrongswan",
+                "libhydra",
+                "libcharon-ss",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "em_hidl",
     owner: "redmi",
     target: {
@@ -21906,6 +21947,34 @@ cc_prebuilt_binary {
     },
     prefer: true,
     relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "ipsec_mon",
+    owner: "redmi",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/ipsec_mon",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libforkexecwrap",
+                "libifcutils_mtk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
     soc_specific: true,
 }
 
